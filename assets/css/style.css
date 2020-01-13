@@ -30,11 +30,15 @@ align-items: right;
 font-size: 40px;
 float: right;
 
+}
 
+#surveyElement {
 
-
+background-color: aquamarine;
 
 
 }
+#surveyResult {
 
-#questions
+    background-color: pink;
+}
