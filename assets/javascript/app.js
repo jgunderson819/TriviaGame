@@ -1,91 +1,90 @@
+// Create alert to give instructuion and start timer
+
+alert("What are the state capitals of each state?  You will have 5 minutes to get all capitals.")
+
+
+
+
+
 // create countdown timer
+    //set minutes 
+    var mins = 5; 
+  
+    //calculate the seconds 
+    var secs = mins * 60; 
 
-$(document).ready()
-//  Variable that will hold our setInterval that runs the clock
-var intervalId;
+    //countdown function is evoked when page is loaded 
+    function countdown() { 
+        setTimeout('Decrement()', 60); 
+    } 
+    countdown()
+    //Decrement function decrement the value. 
+    function Decrement() { 
+        if (document.getElementById) { 
+            minutes = document.getElementById("minutes"); 
+            seconds = document.getElementById("seconds"); 
 
-// prevents the clock from being sped up unnecessarily
-var clockRunning = true;
-var time = 0;
-var lap = 1;
+            //if less than a minute remaining 
+            //Display only seconds value. 
+            if (seconds < 59) { 
+                seconds.value = secs; 
+            } 
 
-function reset() {
+            //Display both minutes and seconds 
+            //getminutes and getseconds is used to 
+            //get minutes and seconds 
+            else { 
+                minutes.value = getminutes(); 
+                seconds.value = getseconds(); 
+            } 
+            //when less than a minute remaining 
+            //colour of the minutes and seconds 
+            //changes to red 
+            if (mins < 1) { 
+                minutes.style.color = "red"; 
+                seconds.style.color = "red"; 
+            } 
+            //if seconds becomes zero, 
+            //then page alert time up 
+            if (mins < 0) { 
+                alert('time up'); 
+                minutes.value = 0; 
+                seconds.value = 0; 
+            } 
+            //if seconds > 0 then seconds is decremented 
+            else { 
+                secs--; 
+                setTimeout('Decrement()', 1000); 
+            } 
+        } 
+    } 
 
-  time = 0;
-  lap = 1;
+    function getminutes() { 
+        //minutes is seconds divided by 60, rounded down 
+        mins = Math.floor(secs / 60); 
+        return mins; 
+    } 
 
-  // DONE: Change the "display" div to "00:00."
-  $("#timer").text("05:00");
-
-  // DONE: Empty the "laps" div.
-  $("#laps").text("");
-}
-function start() {
-
-  // DONE: Use setInterval to start the count here and set the clock to running.
-  if (!clockRunning) {
-    intervalId = setInterval(count, 1000);
-    clockRunning = true;
-  }
-}
-function stop() {
-
-  // DONE: Use clearInterval to stop the count here and set the clock to not be running.
-  clearInterval(intervalId);
-  clockRunning = false;
-}
-function recordLap() {
-
-  // DONE: Get the current time, pass that into the timeConverter function,
-  //       and save the result in a variable.
-  var converted = timeConverter(time);
-
-  // DONE: Add the current lap and time to the "laps" div.
-  $("#laps").append("<p>Lap " + lap + " : " + converted + "</p>");
-
-  // DONE: Increment lap by 1. Remember, we can't use "this" here.
-  lap++;
-}
-function count() {
-
-  // DONE: increment time by 1, remember we cant use "this" here.
-  time++;
-
-  // DONE: Get the current time, pass that into the timeConverter function,
-  //       and save the result in a variable.
-  var converted = timeConverter(time);
-  console.log(converted);
-
-  // DONE: Use the variable we just created to show the converted time in the "display" div.
-  $("#display").text(converted);
-}
-function timeConverter(t) {
-
-  var minutes = Math.floor(t / 60);
-  var seconds = t - (minutes * 60);
-
-  if (seconds < 10) {
-    seconds = "0" + seconds;
-  }
-
-  if (minutes === 0) {
-    minutes = "00";
-  }
-  else if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
-
-  return minutes + ":" + seconds;
-}
-
-
-
-
-
-
-
-
+    function getseconds() { 
+        //take minutes remaining (as seconds) away  
+        //from total seconds remaining 
+        return secs - Math.round(mins * 60); 
+    } 
 
 
 // create questions
+var state =["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Conecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennesee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]
 
+for (i=0; i < 50;i++) {
+
+    x = Math.floor(Math.random)*50
+
+    
+
+
+
+
+
+
+
+}

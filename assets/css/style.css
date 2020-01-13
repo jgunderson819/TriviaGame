@@ -1,6 +1,6 @@
 body {
 
-background-color: aquamarine;
+background-color: chartreuse;
 color: black;
 font-family: Georgia, 'Times New Roman', Times, serif;
 font-size: large;
@@ -16,7 +16,25 @@ h1 {
 
 background-color: blueviolet;
 font-size: larger;
+text-align: center;
+
+
+}
+
+#timer {
+box-sizing: border-box; 
+width: 300px;
+height: 60px;
+border: 1px solid blue;
+align-items: right;
+font-size: 40px;
+float: right;
+
+
+
 
 
 
 }
+
+#questions
