@@ -217,7 +217,7 @@ var json = {
                     name: "Georgia",
                     title: "What is the state capital of Georgia",
                     choices: [
-                        "Augusta", "Columbus", "Atlanta", "HuntsvilleSavannah"
+                        "Augusta", "Columbus", "Atlanta", "Savannah"
                     ],
                     correctAnswer: "Atlanta"
                 }
@@ -755,10 +755,13 @@ survey
         document
             .querySelector('#surveyResult')
             .textContent = "Result JSON:\n" + JSON.stringify(result.data, null, 3);
+            
     });
 
     $("#surveyElement").Survey({model: survey});
-
+    
+  
+    
 
 
 
