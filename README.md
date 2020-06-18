@@ -12,3 +12,7 @@ Also, here is a screenshot of the game homepage:
 and here is a screenshot of the game questions:
 
 ![Homepage](./assets/images/questions.JPG)
+
+and here is a screenshot of the game end:
+
+![Homepage](./assets/images/gameend.JPG)
